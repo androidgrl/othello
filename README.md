@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/androidgrl/othello.png?label=ready&title=Ready)](https://waffle.io/androidgrl/othello)
 # Game Time Starter Kit
 
 To install the dependencies:
