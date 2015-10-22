@@ -4,7 +4,7 @@ const assert = require('assert');
 describe('Board', function () {
     it('should have a default square size of 50 px', function() {
         var board = new Board();
-        assert.equal(board.size, 50);
+        assert.equal(board.squareSize, 50);
     });
 
     it('should have a default number of squares in a row', function() {
