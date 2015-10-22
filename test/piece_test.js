@@ -24,11 +24,10 @@ describe('Piece', function() {
   it('can be placed on the board', function () {
     var board = new Board();
     var square = new Square(0, 5, 50, 50, board);
-    //var piece = new Piece('white', square);
 
-    placePiece('black', square);
+    square.placePiece('black');
 
-    assert.equal(square.piece, piece);
-    assert.equal(square.piece.color, 'white');
+    assert(square.piece);
+    assert.equal(square.piece.color, 'black');
   });
 });
