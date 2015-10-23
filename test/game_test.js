@@ -7,7 +7,7 @@ const assert = require('assert');
 
 describe('Game', function() {
     it('should instantiate with players, turn, winner, over and board properties', function() {
-        var board = new Board;
+        var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
         var game = new Game([player1, player2], board);
@@ -22,7 +22,7 @@ describe('Game', function() {
     });
 
     it('should place a piece on the square that is clicked on', function() {
-        var board = new Board;
+        var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
         var game = new Game([player1, player2], board);
@@ -34,7 +34,7 @@ describe('Game', function() {
     });
 
     it('increases the turn count with each click', function() {
-        var board = new Board;
+        var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
         var game = new Game([player1, player2], board);
@@ -50,9 +50,9 @@ describe('Game', function() {
     });
 
     it('alternates between black and white pieces for each turn', function() {
-        var board = new Board;
-        var player1 = new Player('Dave', 'Black');
-        var player2 = new Player('Jamie', 'White');
+        var board = new Board();
+        var player1 = new Player('Dave', 'black');
+        var player2 = new Player('Jamie', 'white');
         var game = new Game([player1, player2], board);
         var square1 = new Square(0, 0, 50, 50, board);
         var square2 = new Square(100, 100, 50, 50, board);
@@ -60,8 +60,8 @@ describe('Game', function() {
         board.squares.push(square2);
 
         game.respondToClick(10,20);
-        assert.equal(square1.piece.color, "white");
+        assert.equal(square1.piece.color, "black");
         game.respondToClick(110, 110);
-        assert.equal(square2.piece.color, "black");
+        assert.equal(square2.piece.color, "white");
     });
 });
