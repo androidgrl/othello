@@ -38,15 +38,15 @@ describe('Game', function() {
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
         var game = new Game([player1, player2], board);
-        var square = new Square(0, 0, 50, 50, board);
-        board.squares.push(square);
+        var square1 = new Square(0, 0, 50, 50, board);
+        var square2 = new Square(100, 100, 50, 50, board);
+        board.squares.push(square1);
+        board.squares.push(square2);
 
         game.respondToClick(10,20);
         assert.equal(game.turn, 1);
-        game.respondToClick(10,20);
+        game.respondToClick(110,120);
         assert.equal(game.turn, 2);
-        game.respondToClick(10,20);
-        assert.equal(game.turn, 3);
     });
 
     it('alternates between black and white pieces for each turn', function() {
@@ -64,4 +64,23 @@ describe('Game', function() {
         game.respondToClick(110, 110);
         assert.equal(square2.piece.color, "white");
     });
+
+    it('it does not place piece when the square is occupied', function() {
+        var board = new Board();
+        var player1 = new Player('Dave', 'black');
+        var player2 = new Player('Jamie', 'white');
+        var game = new Game([player1, player2], board);
+        var square1 = new Square(0, 0, 50, 50, board);
+        board.squares.push(square1);
+
+        game.respondToClick(10,20);
+        assert.equal(square1.piece.color, "black");
+        assert.equal(game.turn, 1);
+        console.log(game.turn);
+        game.respondToClick(10, 20);
+        assert.equal(square1.piece.color, "black");
+        assert.equal(game.turn, 1);
+        console.log(game.turn);
+    });
+
 });
