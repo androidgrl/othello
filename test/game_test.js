@@ -6,7 +6,7 @@ const Square = require('../lib/square');
 const assert = require('assert');
 
 describe('Game', function() {
-    it('should instantiate with players, turn, winner, over and board properties', function() {
+    xit('should instantiate with players, turn, winner, over and board properties', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
@@ -21,7 +21,7 @@ describe('Game', function() {
         assert(game.board);
     });
 
-    it('should place a piece on the square that is clicked on', function() {
+    xit('should place a piece on the square that is clicked on', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
@@ -33,7 +33,7 @@ describe('Game', function() {
         assert(square.piece);
     });
 
-    it('increases the turn count with each click', function() {
+    xit('increases the turn count with each click', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
@@ -49,7 +49,7 @@ describe('Game', function() {
         assert.equal(game.turn, 2);
     });
 
-    it('alternates between black and white pieces for each turn', function() {
+    xit('alternates between black and white pieces for each turn', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'black');
         var player2 = new Player('Jamie', 'white');
@@ -65,7 +65,7 @@ describe('Game', function() {
         assert.equal(square2.piece.color, "white");
     });
 
-    it('it does not place piece when the square is occupied', function() {
+    xit('does not place piece when the square is occupied', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'black');
         var player2 = new Player('Jamie', 'white');

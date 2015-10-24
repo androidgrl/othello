@@ -3,7 +3,7 @@ const Player = require('../lib/player');
 const assert = require('assert');
 
 describe('Player', function() {
-  it('should have a name, color, score, and status', function() {
+  xit('should have a name, color, score, and status', function() {
   var player = new Player('Jamie', 'white');
 
   assert.equal(player.name, 'Jamie');

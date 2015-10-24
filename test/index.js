@@ -7,7 +7,7 @@ require('./game_test');
 require('./player_test');
 
 describe('my test suite', function () {
-  it('should work yo', function () {
+  xit('should work yo', function () {
     assert(true);
   });
 });

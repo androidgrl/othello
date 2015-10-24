@@ -4,7 +4,7 @@ const Board = require('../lib/board');
 const assert = require('assert');
 
 describe('Piece', function() {
-  it('exists', function() {
+  xit('exists', function() {
     var board = new Board();
     var square = new Square(0, 5, 50, 50, board);
     var piece = new Piece('white', square);
@@ -12,7 +12,7 @@ describe('Piece', function() {
     assert(piece);
   });
 
-  it('has color and square properties', function() {
+  xit('has color and square properties', function() {
     var board = new Board();
     var square = new Square(0, 5, 50, 50, board);
     var piece = new Piece('white', square);
@@ -21,7 +21,7 @@ describe('Piece', function() {
     assert.equal(piece.square, square);
   });
 
-  it('can be placed on the board', function () {
+  xit('can be placed on the board', function () {
     var board = new Board();
     var square = new Square(0, 5, 50, 50, board);
 
