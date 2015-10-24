@@ -6,17 +6,18 @@ const Square = require('../lib/square');
 const assert = require('assert');
 
 describe('Game', function() {
-    xit('should instantiate with players, turn, winner, over and board properties', function() {
+    it('should instantiate with players, turn, over and board properties', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'Black');
         var player2 = new Player('Jamie', 'White');
-        var game = new Game([player1, player2], board);
+        var players = [player1, player2];
+        var game = new Game(board);
+        game.players = players;
 
         assert.equal(game.players[0].name, 'Dave');
         assert.equal(game.players[0].color, 'Black');
         assert.equal(game.players[1].name, 'Jamie');
         assert.equal(game.turn, 0);
-        assert.equal(game.winner, null);
         assert.equal(game.over, false);
         assert(game.board);
     });

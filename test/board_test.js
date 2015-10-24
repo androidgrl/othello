@@ -7,17 +7,17 @@ describe('Board', function () {
         assert.equal(board.squareSize, 50);
     });
 
-   xit('should have a default number of squares in a row', function() {
+    it('should have a default number of squares in a row', function() {
         var board = new Board();
-        assert.equal(board.numberOfSquares, 8);
+        assert.equal(board.squaresPerRow, 8);
     });
 
-   xit('should have squares', function () {
+    it('should have squares', function () {
         var board = new Board();
         assert.deepEqual(board.squares, []);
     });
 
-   xit('should have 64 squares', function() {
+    xit('should have 64 squares', function() {
         var board = new Board();
         board.createBoard();
         assert(board.squares[63]);
