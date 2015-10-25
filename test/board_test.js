@@ -1,5 +1,6 @@
 const Board = require('../lib/board');
 const assert = require('assert');
+const Game = require('../lib/game');
 
 describe('Board', function () {
     it('should have a default square size of 50 px', function() {
@@ -22,5 +23,18 @@ describe('Board', function () {
         board.createBoard();
         assert(board.squares[63]);
         assert.equal(board.squares.length, 64);
+    });
+
+    it('should place first four pieces', function() {
+        var board = new Board();
+        var game = new Game(board);
+        board.game = game;
+        board.createBoard();
+        board.placeFirstFourPieces();
+
+        assert.equal(board.squares[27].piece.color, "black");
+        assert.equal(board.squares[28].piece.color, "white");
+        assert.equal(board.squares[36].piece.color, "black");
+        assert.equal(board.squares[35].piece.color, "white");
     });
 });
