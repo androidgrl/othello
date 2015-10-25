@@ -22,6 +22,21 @@ describe('Game', function() {
         assert(game.board);
     });
 
+    it('sets the current player according to the turn number', function() {
+        var board = new Board();
+        var game = new Game(board);
+
+        assert.equal(game.currentPlayer.color, 'black');
+
+        game.turn = 1;
+        game.findCurrentPlayer();
+        assert.equal(game.currentPlayer.color, 'white');
+        game.turn = 2;
+        game.findCurrentPlayer();
+        assert.equal(game.currentPlayer.color, 'black');
+
+    });
+
     xit('should place a piece on the square that is clicked on', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'Black');
