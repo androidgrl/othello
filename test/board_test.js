@@ -17,7 +17,7 @@ describe('Board', function () {
         assert.deepEqual(board.squares, []);
     });
 
-    xit('should have 64 squares', function() {
+    it('should have 64 squares', function() {
         var board = new Board();
         board.createBoard();
         assert(board.squares[63]);
