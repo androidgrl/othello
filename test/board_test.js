@@ -37,4 +37,15 @@ describe('Board', function () {
         assert.equal(board.squares[36].piece.color, "black");
         assert.equal(board.squares[35].piece.color, "white");
     });
+
+    it('should find valid squares for current player to click', function() {
+        var board = new Board();
+        var game = new Game(board);
+        board.game = game;
+        board.createBoard();
+        board.placeFirstFourPieces();
+        var valid = board.findValidSquares();
+        console.log(valid);
+        assert.equal();
+    })
 });
