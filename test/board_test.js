@@ -44,6 +44,7 @@ describe('Board', function () {
         board.game = game;
         board.createBoard();
         board.placeFirstFourPieces();
+        console.log(board.squares[63].neighbors);
         var validSquares = board.findValidSquares();
         console.log(game.currentPlayer.color);
         var firstValidSquare = validSquares[0];
