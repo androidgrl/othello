@@ -3,33 +3,40 @@ const Board = require('../lib/board');
 const assert = require('assert');
 
 describe('Square', function () {
-    xit('exists', function () {
+    it('exists', function () {
         var board = new Board();
-        var square = new Square(0, 5, 50, 50, board);
+        var square = new Square(0, 5, 50, board, 0);
 
         assert(square);
     });
 
-    xit('instantiates with a width, height, x, y, and board', function () {
+    it('instantiates with a size, x, y, board, and index', function () {
         var board = new Board();
-        var square = new Square(0, 5, 50, 50, board);
-        assert.equal(square.width, 50);
-        assert.equal(square.height, 50);
+        var square = new Square(0, 5, 50, board, 0);
+        assert.equal(square.size, 50);
         assert.equal(square.x, 0);
         assert.equal(square.y, 5);
         assert.equal(square.board, board);
+        assert.equal(square.index, 0);
     });
 
-    xit('instantiates with a default piece property of null', function () {
+    it('instantiates with a default piece property of null', function () {
         var board = new Board();
-        var square = new Square(0, 5, 50, 50, board);
+        var square = new Square(0, 5, 50, board, 0);
         assert.equal(square.piece, null);
     });
 
-    xit('instantiates with a default color property of green', function () {
+    it('instantiates with a default color property of green', function () {
         var board = new Board();
-        var square = new Square(0, 5, 50, 50, board);
+        var square = new Square(0, 5, 50, board, 0);
         assert.equal(square.color, 'green');
+    });
+
+    it('can find its neighbors', function () {
+        var board = new Board();
+        board.createBoard();
+        var square = board.squares[0];
+        assert.deepEqual([null, null, 1, 9, 8, null, null, null], square.getNeighbors());
     });
 });
 
