@@ -44,8 +44,10 @@ describe('Board', function () {
         board.game = game;
         board.createBoard();
         board.placeFirstFourPieces();
-        var valid = board.findValidSquares();
-        console.log(valid);
-        assert.equal();
-    })
+        var validSquares = board.findValidSquares();
+        console.log(game.currentPlayer.color);
+        var firstValidSquare = validSquares[0];
+        assert.equal(firstValidSquare.index, 20);
+        assert.equal(validSquares.length, 4);
+    });
 });
