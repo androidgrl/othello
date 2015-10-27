@@ -103,7 +103,23 @@ describe('Square', function () {
         assert.equal(westSquare.index, 3);
     });
 
+    describe('flippablePaths', function() {
+        it('returns empty array when no flippable paths first scenario', function() {
+            var board = new Board();
+            board.createBoard();
 
+            assert.deepEqual([], board.squares[9].flippablePaths());
+        });
+
+        it('returns empty array when no flippable paths second scenario', function() {
+            var board = new Board();
+            board.createBoard();
+
+            assert.deepEqual([], board.squares[9].flippablePaths());
+        });
+
+    });
 });
+
 
 

@@ -5,6 +5,7 @@ require('./square_test');
 require('./piece_test');
 require('./game_test');
 require('./player_test');
+require('./evaluate-flippable-path_test');
 
 describe('my test suite', function () {
   xit('should work yo', function () {
