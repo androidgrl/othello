@@ -8,15 +8,12 @@ const assert = require('assert');
 describe('Game', function() {
     it('should instantiate with players, turn, over and board properties', function() {
         var board = new Board();
-        var player1 = new Player('Dave', 'Black');
-        var player2 = new Player('Jamie', 'White');
-        var players = [player1, player2];
         var game = new Game(board);
-        game.players = players;
 
-        assert.equal(game.players[0].name, 'Dave');
-        assert.equal(game.players[0].color, 'Black');
-        assert.equal(game.players[1].name, 'Jamie');
+        assert.equal(game.players[0].name, 'player1');
+        assert.equal(game.players[0].color, 'black');
+        assert.equal(game.players[1].name, 'player2');
+        assert.equal(game.players[1].color, 'white');
         assert.equal(game.turn, 0);
         assert.equal(game.over, false);
         assert(game.board);
@@ -25,9 +22,7 @@ describe('Game', function() {
     it('sets the current player according to the turn number', function() {
         var board = new Board();
         var game = new Game(board);
-
         assert.equal(game.currentPlayer.color, 'black');
-
         game.turn = 1;
         game.findCurrentPlayer();
         assert.equal(game.currentPlayer.color, 'white');
@@ -39,8 +34,8 @@ describe('Game', function() {
 
     xit('should place a piece on the square that is clicked on', function() {
         var board = new Board();
-        var player1 = new Player('Dave', 'Black');
-        var player2 = new Player('Jamie', 'White');
+        var player1 = new Player('Dave', 'black');
+        var player2 = new Player('Jamie', 'white');
         var game = new Game([player1, player2], board);
         var square = new Square(0, 0, 50, 50, board);
         board.squares.push(square);
@@ -51,8 +46,8 @@ describe('Game', function() {
 
     xit('increases the turn count with each click', function() {
         var board = new Board();
-        var player1 = new Player('Dave', 'Black');
-        var player2 = new Player('Jamie', 'White');
+        var player1 = new Player('Dave', 'black');
+        var player2 = new Player('Jamie', 'white');
         var game = new Game([player1, player2], board);
         var square1 = new Square(0, 0, 50, 50, board);
         var square2 = new Square(100, 100, 50, 50, board);

@@ -7,7 +7,7 @@ describe('evaluateFlippablePath', function() {
         var square = new Square(0,0,50,null,null);
         square.squareInDirection = function() {
             return undefined;
-        }
+        };
         var path = evaluateFlippablePath(square, 9);
 
         assert.deepEqual([], path);
@@ -18,7 +18,7 @@ describe('evaluateFlippablePath', function() {
         var square2 = new Square(0,0,50,null,null);
         square1.squareInDirection = function() {
             return square2;
-        }
+        };
         square1.placePiece('white');
         var path = evaluateFlippablePath(square1, 9);
 
@@ -31,10 +31,10 @@ describe('evaluateFlippablePath', function() {
         var square2 = new Square(0,0,50,null,null);
         square1.squareInDirection = function() {
             return square2;
-        }
+        };
         square2.squareInDirection = function() {
             return undefined;
-        }
+        };
         square1.placePiece('black');
         square2.placePiece('black');
         var path = evaluateFlippablePath(square1, 9);
@@ -47,10 +47,10 @@ describe('evaluateFlippablePath', function() {
         var square2 = new Square(0,0,50,null,null);
         square1.squareInDirection = function() {
             return square2;
-        }
+        };
         square2.squareInDirection = function() {
             return undefined;
-        }
+        };
         square1.placePiece('black');
         square2.placePiece('white');
         var path = evaluateFlippablePath(square1, 9);
@@ -66,13 +66,13 @@ describe('evaluateFlippablePath', function() {
         var square4 = new Square(0,0,50,null,null);
         square1.squareInDirection = function() {
             return square2;
-        }
+        };
         square2.squareInDirection = function() {
             return square3;
-        }
+        };
         square3.squareInDirection = function() {
             return square4;
-        }
+        };
         square1.placePiece('white');
         square2.placePiece('white');
         square3.placePiece('white');
@@ -87,10 +87,10 @@ describe('evaluateFlippablePath', function() {
         var square3 = new Square(0,0,50,null,null);
         square1.squareInDirection = function() {
             return square2;
-        }
+        };
         square2.squareInDirection = function() {
             return square3;
-        }
+        };
         square1.placePiece('white');
         square2.placePiece('white');
         square3.placePiece('black');
@@ -101,6 +101,4 @@ describe('evaluateFlippablePath', function() {
         assert.equal('white', path[0].piece.color);
         assert.equal('white', path[1].piece.color);
     });
-
-
 });
