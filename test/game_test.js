@@ -94,4 +94,15 @@ describe('Game', function() {
         assert.equal(game.turn, 1);
     });
 
+    it('knows when it is over', function() {
+        var board = new Board();
+        var game = new Game(board);
+        board.game = game;
+        board.createBoard();
+        board.squares.forEach(function(square){
+            square.placePiece('white');
+        });
+
+        assert.equal(true, game.over);
+    });
 });
