@@ -71,7 +71,6 @@ describe('evaluateFlippablePath', function() {
         var path = square1.evaluateFlippablePath(square1, 9);
 
         assert(1, path.length);
-        console.log(path);
         assert.equal('black', path[0].piece.color);
     });
 

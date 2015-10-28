@@ -32,7 +32,7 @@ describe('Game', function() {
 
     });
 
-    xit('should place a piece on the square that is clicked on', function() {
+    it('should place a piece on the square that is clicked on', function() {
         var board = new Board();
         var player1 = new Player('Dave', 'black');
         var player2 = new Player('Jamie', 'white');
@@ -87,11 +87,9 @@ describe('Game', function() {
         game.respondToClick(10,20);
         assert.equal(square1.piece.color, "black");
         assert.equal(game.turn, 1);
-        console.log(game.turn);
         game.respondToClick(10, 20);
         assert.equal(square1.piece.color, "black");
         assert.equal(game.turn, 1);
-        console.log(game.turn);
     });
 
 });

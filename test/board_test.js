@@ -46,7 +46,6 @@ describe('Board', function () {
         board.placeFirstFourPieces();
         var validSquares = board.findValidSquares();
         var firstValidSquare = validSquares[0];
-        console.log(firstValidSquare);
         assert.equal(firstValidSquare.index, 20);
         assert.equal(validSquares.length, 4);
     });
