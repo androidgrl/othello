@@ -32,14 +32,16 @@ describe('Game', function() {
 
     });
 
-    it('should place a piece on the square that is clicked on', function() {
+    xit('should place a piece on the square that is clicked on', function() {
         var board = new Board();
-        var player1 = new Player('Dave', 'black');
-        var player2 = new Player('Jamie', 'white');
-        var game = new Game([player1, player2], board);
-        var square = new Square(0, 0, 50, 50, board);
-        board.squares.push(square);
-        game.respondToClick(10,20);
+        var game = new Game(board);
+        board.game = game;
+        board.createBoard();
+        var square = board.squares[0];
+        board.respondToClick(10,20);
+        board.validSquares = function() {
+            return square;
+        };
 
         assert(square.piece);
     });
@@ -92,4 +94,15 @@ describe('Game', function() {
         assert.equal(game.turn, 1);
     });
 
+    it('knows when it is over', function() {
+        var board = new Board();
+        var game = new Game(board);
+        board.game = game;
+        board.createBoard();
+        board.squares.forEach(function(square){
+            square.placePiece('white');
+        });
+
+        assert.equal(true, game.over);
+    });
 });

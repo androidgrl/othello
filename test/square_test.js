@@ -1,6 +1,7 @@
 const Square = require('../lib/square');
 const Board = require('../lib/board');
 const assert = require('assert');
+const Game = require('../lib/game');
 
 describe('Square', function () {
     it('exists', function () {
@@ -37,6 +38,37 @@ describe('Square', function () {
         board.createBoard();
         var square = board.squares[0];
         assert.deepEqual([null, null, 1, 9, 8, null, null, null], square.getNeighbors());
+    });
+
+    it('it can place a piece', function() {
+        var board = new Board();
+        board.createBoard();
+
+        var square = board.squares[0];
+        square.placePiece('white');
+        assert.equal('white', square.piece.color);
+    });
+
+    it('a square knows it is not playable', function() {
+        var board = new Board();
+        var game = new Game(board);
+        board.game = game;
+        board.createBoard();
+        board.placeFirstFourPieces();
+        var square = board.squares[0];
+
+        assert.equal(false, square.isPlayable());
+    });
+
+    it('a square knows it is playable', function() {
+        var board = new Board();
+        var game = new Game(board);
+        board.createBoard();
+        board.game = game;
+        board.placeFirstFourPieces();
+        var square = board.squares[20];
+
+        assert.equal(true, square.isPlayable());
     });
 
     describe('flippablePaths', function() {
