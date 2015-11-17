@@ -1,4 +1,12 @@
-[![Stories in Ready](https://badge.waffle.io/androidgrl/othello.png?label=ready&title=Ready)](https://waffle.io/androidgrl/othello)
+In this project we built the board game Othello that is playable in the browser. There were no server-side component- we used client-side JavaScript exclusively to complete this project.
+
+The goals for this project were to:
+
+* Use client-side to drive both the design and implementation of code
+* Use jQuery to traverse and manipulate the DOM
+* Use test-driven design to build a client-side applicaiton
+
+[![User Stories](https://badge.waffle.io/androidgrl/othello.png?label=ready&title=Ready)](https://waffle.io/androidgrl/othello)
 # Game Time Starter Kit
 
 To install the dependencies:
