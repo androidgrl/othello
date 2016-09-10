@@ -36,7 +36,7 @@ describe('Game', function() {
         var board = new Board();
         var game = new Game(board);
         board.game = game;
-        board.createBoard();
+        board.createSquares();
         board.placeFirstFourPieces();
         var square = board.squares[27];
 

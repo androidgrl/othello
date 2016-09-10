@@ -20,7 +20,7 @@ describe('Board', function () {
 
     it('should have 64 squares', function() {
         var board = new Board();
-        board.createBoard();
+        board.createSquares();
         assert(board.squares[63]);
         assert.equal(board.squares.length, 64);
     });
@@ -29,7 +29,7 @@ describe('Board', function () {
         var board = new Board();
         var game = new Game(board);
         board.game = game;
-        board.createBoard();
+        board.createSquares();
         board.placeFirstFourPieces();
 
         assert.equal(board.squares[27].piece.color, "black");
@@ -42,7 +42,7 @@ describe('Board', function () {
         var board = new Board();
         var game = new Game(board);
         board.game = game;
-        board.createBoard();
+        board.createSquares();
         board.placeFirstFourPieces();
         var validSquares = board.findValidSquares();
         var firstValidSquare = validSquares[0];

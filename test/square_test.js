@@ -35,14 +35,14 @@ describe('Square', function () {
 
     it('can find its neighbors', function () {
         var board = new Board();
-        board.createBoard();
+        board.createSquares();
         var square = board.squares[0];
         assert.deepEqual([null, null, 1, 9, 8, null, null, null], square.getNeighbors());
     });
 
     it('it can place a piece', function() {
         var board = new Board();
-        board.createBoard();
+        board.createSquares();
 
         var square = board.squares[0];
         square.placePiece('white');
@@ -53,7 +53,7 @@ describe('Square', function () {
         var board = new Board();
         var game = new Game(board);
         board.game = game;
-        board.createBoard();
+        board.createSquares();
         board.placeFirstFourPieces();
         var square = board.squares[0];
 
@@ -63,7 +63,7 @@ describe('Square', function () {
     it('a square knows it is playable', function() {
         var board = new Board();
         var game = new Game(board);
-        board.createBoard();
+        board.createSquares();
         board.game = game;
         board.placeFirstFourPieces();
         var square = board.squares[20];
@@ -74,14 +74,14 @@ describe('Square', function () {
     describe('flippablePaths', function() {
         it('returns empty array when no flippable paths first scenario', function() {
             var board = new Board();
-            board.createBoard();
+            board.createSquares();
 
             assert.deepEqual([], board.squares[9].flippablePaths());
         });
 
         it('returns empty array when no flippable paths second scenario', function() {
             var board = new Board();
-            board.createBoard();
+            board.createSquares();
 
             assert.deepEqual([], board.squares[9].flippablePaths());
         });
