@@ -8,7 +8,7 @@ const assert = require('assert');
 describe('Game', function() {
     it('should instantiate with players, turn, over and board properties', function() {
         var board = new Board();
-        var game = new Game(board);
+        var game = new Game();
 
         assert.equal(game.players[0].name, 'player1');
         assert.equal(game.players[0].color, 'black');
@@ -16,7 +16,6 @@ describe('Game', function() {
         assert.equal(game.players[1].color, 'white');
         assert.equal(game.turn, 0);
         assert.equal(game.over, false);
-        assert(game.board);
     });
 
     it('sets the current player according to the turn number', function() {
